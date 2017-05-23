@@ -7,8 +7,7 @@ Docker file + startup script for MXCuBE 2
 
 ## Starting
 
-As the Docker image needs X11 forwarding it is a bit more complicated than usual, so there is a `./start_mxcube2` script
-that makes the right docker command line to start the image.
+As the Docker image needs X11 forwarding and host network access it is a bit more complicated than usual, so there is a `./start_mxcube2` script that makes the right docker command line to start the image.
 
 ## Starting MXCuBE 2
 
