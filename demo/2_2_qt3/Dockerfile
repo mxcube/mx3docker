@@ -37,6 +37,7 @@ WORKDIR "mxcube"
 RUN git submodule init
 RUN git submodule update
 WORKDIR /root/mxcube
+# Unnecessary once the relevant bug is fixed:
 RUN rm BlissFramework/Bricks/InstanceListBrick.py
 RUN mv ./example_mxcube.gui mxcube.gui
 ENV USER unknown_user

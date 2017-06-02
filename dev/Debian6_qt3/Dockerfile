@@ -31,20 +31,19 @@ RUN git clone git://github.com/mxcube/qub
 WORKDIR "qub"
 RUN sed --in-place -e 's/opencv_module]/]/' setup.py
 RUN python setup.py install
+
+# Python-Java bridge - needed for GPhL workflow:
 RUN pip install py4j --user
-#WORKDIR /root
-#RUN git clone git://github.com/mxcube/mxcube -b 2.2
-#WORKDIR "mxcube"
-#RUN git submodule init
-#RUN git submodule update
-#WORKDIR /root/mxcube
-#RUN rm BlissFramework/Bricks/InstanceListBrick.py
+
+# Needed as this docker is Python 2.6
+RUN pip install ordereddict
+
+# Copy the file before running, instead:
 #RUN mv ./example_mxcube.gui mxcube.gui
+
 ENV USER unknown_user
-#RUN echo '$MXCUBE_ROOT/bin/mxcube --hardwareRepository=$MXCUBE_ROOT/ExampleFiles/HardwareRepository' >/root/start_mxcube
-#RUN chmod +x /root/start_mxcube
 WORKDIR /root/mxcube
-CMD ["bin/mxcube",  "--hardwareRepository=ExampleFiles/HardwareObjects.xml"]
+CMD ["bin/mxcube", "--hardwareRepository=ExampleFiles/HardwareObjects.xml"]
 
 
 
