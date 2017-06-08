@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+CONTAINER=mx3_deb9_qt4_master
+
+xhost +local:
+docker run -d -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER

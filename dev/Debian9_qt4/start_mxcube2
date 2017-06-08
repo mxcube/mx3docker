@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+CONTAINER=mx3_deb9_qt4
+
+xhost +local:
+exec docker run -it -h=$CONTAINER -v $MXCUBE2_ROOT:/MXCuBE/mxcube -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
