@@ -35,15 +35,20 @@ RUN python setup.py install
 # Python-Java bridge - needed for GPhL workflow:
 RUN pip install py4j --user
 
+# Needed for poython version < 3.4
+RUN pip install enum34
+
 # Needed as this docker is Python 2.6
 RUN pip install ordereddict
+
+RUN mkdir -p /MXCuBE
+WORKDIR /MXCuBE/mxcube
 
 # Copy the file before running, instead:
 #RUN mv ./example_mxcube.gui mxcube.gui
 
 ENV USER unknown_user
-WORKDIR /root/mxcube
-CMD ["bin/mxcube", "--hardwareRepository=ExampleFiles/HardwareObjects.xml"]
+CMD ["bin/mxcube", "--hardwareRepository=HardwareRepository/tests/xml"]
 
 
 

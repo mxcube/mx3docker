@@ -13,7 +13,22 @@ RUN apt-get install -y python-yaml
 RUN apt-get install -y python-pydispatch
 RUN apt-get install -y python-enum34
 
-RUN mkdir -p /MXCuBE/mxcube
+
+# Python-Java bridge - needed for GPhL workflow:
+RUN apt-get install python-pip -y
+RUN pip install --upgrade pip
+RUN pip install py4j --user
+
+# Needed for poython version < 3.4
+RUN pip install enum34
+
+# Needed for running in Python 2.6
+RUN pip install ordereddict
+
+# the subduirectory is mounted from the outside in the dv version,
+# but must be created in the demo version
+#RUN mkdir -p /MXCuBE/mxcube
+RUN mkdir -p /MXCuBE
 WORKDIR /MXCuBE/mxcube
 
 
@@ -35,3 +50,10 @@ WORKDIR /MXCuBE/mxcube
 
 # Run after starting the container
 #ENTRYPOINT ["/MXCuBE/mxcube/bin/mxcube2"]
+
+# Copy the file before running, instead:
+#RUN mv ./example_mxcube.gui mxcube.gui
+
+# Used instead of Entrypoint to allow alterntive commands to be run
+ENV USER unknown_user
+CMD ["bin/mxcube", "--hardwareRepository=HardwareRepository/tests/xml", "-QT4"]

@@ -2,6 +2,6 @@
 export XSOCK=/tmp/.X11-unix
 export XAUTH=/tmp/.docker.xauth
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-exec docker run -v $MXCUBE2_ROOT:/root/mxcube -ti --net=host -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e DISPLAY=$DISPLAY mxcube2_dev
+exec docker run -v $MXCUBE2_ROOT:/MXCuBE/mxcube -ti --net=host -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e DISPLAY=$DISPLAY mxcube2_dev_qt3
 
 
