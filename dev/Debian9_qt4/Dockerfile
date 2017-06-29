@@ -19,13 +19,10 @@ RUN apt-get install python-pip -y
 RUN pip install --upgrade pip
 RUN pip install py4j --user
 
-# Needed for poython version < 3.4
-RUN pip install enum34
+## Needed for python version < 3.4
+#RUN pip install enum34
 
-# Needed for running in Python 2.6
-RUN pip install ordereddict
-
-# the subduirectory is mounted from the outside in the dv version,
+# the subdirectory is mounted from the outside in the dv version,
 # but must be created in the demo version
 #RUN mkdir -p /MXCuBE/mxcube
 RUN mkdir -p /MXCuBE
