@@ -35,7 +35,7 @@ RUN python setup.py install
 # Python-Java bridge - needed for GPhL workflow:
 RUN pip install py4j --user
 
-# Needed for poython version < 3.4
+# Needed for python version < 3.4
 RUN pip install enum34
 
 # Needed as this docker is Python 2.6
