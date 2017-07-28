@@ -46,7 +46,7 @@ WORKDIR /MXCuBE/mxcube
 
 # Copy the file before running, instead:
 #RUN mv ./example_mxcube.gui mxcube.gui
-
+run export PATH="$PATH:/MXCuBE/mxcube/gphl_java/bin"
 ENV USER unknown_user
 CMD ["bin/mxcube", "--hardwareRepository=HardwareRepository/tests/xml"]
 
