@@ -41,6 +41,12 @@ RUN pip install enum34
 # Needed as this docker is Python 2.6
 RUN pip install ordereddict
 
+# Needed as this docker is Python 2.6
+RUN pip install ordereddict
+
+# Needed for simcal
+RUN pip install f90nml
+
 RUN mkdir -p /MXCuBE
 WORKDIR /MXCuBE/mxcube
 
