@@ -29,7 +29,7 @@ docker ps
 
 ## Connecting to the VNC server
 This docker container comes with a pre-configured desktop enviroment that can be accessed
-by using VNC. Simply connect to <ip-address>:1 and give the password "mxcube"
+by using VNC. Simply connect to *ip:1* and give the password "mxcube"
 
 To get the container id run
 ```
