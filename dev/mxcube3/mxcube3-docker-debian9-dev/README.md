@@ -1,7 +1,7 @@
 # MXCuBE3 Docker Container
 
-Docker container for MXCuBE3 based on Debian 9 with a desktop environment (Mate)
-VNC server and some development tools like Eemacs and VIM.
+Development Docker container for MXCuBE3 based on Debian 9 with a desktop environment (Mate)
+VNC server and some development tools like Emacs and VIM.
 
 ## Building
 
