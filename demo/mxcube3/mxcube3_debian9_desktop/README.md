@@ -5,7 +5,7 @@ and a VNC server.
 
 ## Building
 
-The docker file can be built simply by issuing:
+The docker file can be built by simply issuing:
 
 ```
 docker build -t mxcube3-desktop .
@@ -41,7 +41,7 @@ To get the container ip address issue:
 docker inspect <container id>
 ```
 
-Connect with a VNC client (for istance vncviewer) PASSWORD IS: mxcube
+Connect with a VNC client (for isntance vncviewer) PASSWORD IS: mxcube
 ```
 vncviewer <ip-address>:1
 ```
