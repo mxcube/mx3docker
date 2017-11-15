@@ -46,6 +46,15 @@ Connect with a VNC client (for isntance vncviewer) PASSWORD IS: mxcube
 vncviewer <ip-address>:1
 ```
 
+Chrome can be launched, once connected, from a terminal window, by typing
+
+```
+google-chrome --no-sandbox
+```
+
+Point the browser to localhost:8090 to start using MXCuBE3
+
+
 
 
 
