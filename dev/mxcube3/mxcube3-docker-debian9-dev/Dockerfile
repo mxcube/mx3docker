@@ -6,6 +6,7 @@ FROM debian:9
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
 ENV TERM linux
+ENV USER root
 
 # Install system pacakges
 
