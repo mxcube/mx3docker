@@ -17,7 +17,7 @@ RUN apt-get install make -y
 RUN apt-get install vim -y
 RUN apt-get install g++ -y
 
-# Add user and group so files on main machinne get to belong to u er instead of root
+# Add user and group so files on main machine get to belong to user instead of root
 RUN groupadd -g 3001 gphl
 RUN useradd -g gphl -m -s /bin/tcsh -u 1158 rhfogh
 RUN pip install --index-url=https://pypi.python.org/simple/ --upgrade pip
