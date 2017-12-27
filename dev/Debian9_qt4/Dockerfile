@@ -24,13 +24,6 @@ RUN wget https://github.com/vasole/pymca/archive/v4.7.4.tar.gz && tar xzvf v4.7.
 #RUN git clone git://github.com/mxcube/pychooch
 #WORKDIR "pychooch"
 #RUN python setup.py install
-WORKDIR /tmp
-RUN git clone git://github.com/mxcube/qub
-WORKDIR "qub"
-RUN sed --in-place -e 's/opencv_module]/]/' setup.py
-# Next added to trigger Qt4 version
-RUN sed --in-place -e 's/QT3=True/QT3=False/' setup.py
-RUN python setup.py install
 
 # Python-Java bridge - needed for GPhL workflow:
 RUN pip install py4j --user
@@ -38,7 +31,7 @@ RUN pip install py4j --user
 ## Needed for python version < 3.4
 #RUN pip install enum34
 
-# Needed for simcal
+# Needed for GPhL simcal
 RUN pip install f90nml
 
 # the subdirectory is mounted from the outside in the dv version,
