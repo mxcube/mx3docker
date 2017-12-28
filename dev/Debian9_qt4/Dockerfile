@@ -34,7 +34,7 @@ RUN pip install py4j --user
 # Needed for GPhL simcal
 RUN pip install f90nml
 
-# the subdirectory is mounted from the outside in the dv version,
+# the subdirectory is mounted from the outside in the dev version,
 # but must be created in the demo version
 #RUN mkdir -p /MXCuBE/mxcube
 RUN mkdir -p /MXCuBE
