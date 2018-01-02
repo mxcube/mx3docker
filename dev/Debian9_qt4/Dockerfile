@@ -26,7 +26,9 @@ RUN wget https://github.com/vasole/pymca/archive/v4.7.4.tar.gz && tar xzvf v4.7.
 #RUN python setup.py install
 
 # Python-Java bridge - needed for GPhL workflow:
-RUN pip install py4j --user
+# Try inhstalling as root, as otherwise not found in XML parsing
+RUN pip install py4j
+#RUN pip install py4j --user
 
 ## Needed for python version < 3.4
 #RUN pip install enum34
