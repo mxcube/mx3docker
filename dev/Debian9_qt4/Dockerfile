@@ -44,6 +44,6 @@ WORKDIR /MXCuBE/mxcube
 
 
 
-# Used instead of Entrypoint to allow alterntive commands to be run
+# Used instead of Entrypoint to allow alternative commands to be run
 ENV USER rhfogh
-CMD ["bin/mxcube", "--hardwareRepository=HardwareRepository/tests/xml", "-QT4"]
+CMD ["bin/mxcube", "--hardwareRepository=ExampleFiles/HardwareObjects.xml", "--pyqt4"]
