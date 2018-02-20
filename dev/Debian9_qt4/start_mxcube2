@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-CONTAINER=mx3_deb9_qt4
 
+CONTAINER=mxcube2_dev_qt4
 xhost +local:
-exec docker run -it -h=$CONTAINER -v $MXCUBE2_ROOT:/MXCuBE/mxcube -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
+# Command to run WITHOUT GPhL workflow installation.
+# NB the -u option must match Dockerfile
+# exec docker run -it -h=$CONTAINER -u rhfogh:gphl -v $MXCUBE2_ROOT:/MXCuBE/mxcube -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
+# Command needed to run GPhL workflows - See gphl_config files for meaning of different directories
+exec docker run -it -h=$CONTAINER -u rhfogh:gphl -v $MXCUBE2_ROOT:/MXCuBE/mxcube -v /public/xtal:/MXCuBE/softwares -v /home/rhfogh/Software/jre1.8.0_144/:/MXCuBE/gphl_java -v /home/rhfogh/scratch/sources/eclipse/wf10/:/MXCuBE/gphl_java_classes -v /home/rhfogh/scratch/mxcube_testdata/:/tmp/mxcube_testdata -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
