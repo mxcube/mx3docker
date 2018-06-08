@@ -11,6 +11,7 @@ RUN apt-get install -y python-matplotlib
 RUN apt-get install -y python-suds pymca
 RUN apt-get install -y python-yaml
 RUN apt-get install -y python-pydispatch
+RUN apt-get install -y python-enum34
 
 RUN mkdir -p /MXCuBE/mxcube
 WORKDIR /MXCuBE/mxcube
