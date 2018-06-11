@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONTAINER=mx3_deb9_qt4_master
+CONTAINER=mx3_deb9_qt4_master_demo
 
 xhost +local:
-docker run -d -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
+docker run -d -e HARDWARE_REPOSITORY_SERVER=/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix mx3_deb9_qt4_master_demo
