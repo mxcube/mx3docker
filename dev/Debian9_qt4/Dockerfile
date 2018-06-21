@@ -4,7 +4,6 @@ RUN apt-get install -y git vim apt-utils python-jsonpickle python-yaml
 RUN apt-get install -y mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev python-qt4 python-dev python-qt4-dev
 RUN apt-get install -y python-gevent python-louie python-pydispatch
 RUN apt-get install -y python-numpy python-scipy python-matplotlib
-RUN apt-get install -y python-enum34
 
 # Tools for PYMCA etc. installation
 RUN apt-get install -y wget make g++
