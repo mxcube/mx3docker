@@ -15,12 +15,12 @@ The name of the image will be mxcube3-dev
 
 ## Running
 
-After beeing built the docker file can be executed with:
+After being built the docker file can be executed with:
 
 ```
 docker run -p 5901:5901 -p 8090:8090 -dt mxcube3-dev
 ```
-This container runs the MXCuBE backend in the foreground for easier deubgging,
+This container runs the MXCuBE backend in the foreground for easier debugging,
 browsing can be done from either the local system or via VNC.
 
 MXCuBE is installed in /opt/mxcube3
