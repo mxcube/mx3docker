@@ -2,7 +2,7 @@
 
 CONTAINER=mx3_deb9_qt4_gphl
 
-# The following variables should be ch3ecked and (re)set as needed
+# The following variables should be checked and (re)set as needed
 
 # MXCuBE additional lookup directories
 # Examples of alternative path settings:
