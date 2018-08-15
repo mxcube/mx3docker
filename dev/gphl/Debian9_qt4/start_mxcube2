@@ -30,8 +30,8 @@ JAVA_INSTALLATION_DIR="/home/rhfogh/Software/jre1.8.0_144/"
 WORKFLOW_INSTALLATION_DIR="/home/rhfogh/scratch/sources/eclipse/wf14/"
 
 # Location for all output data - including mxcube settings
-#OUTPUT_DATA_ROOT="/home/rhfogh/scratch/mxcube_base_dir/"
-OUTPUT_DATA_ROOT="/scratch_fs1/rhfogh/mxcube_base_dir/"
+OUTPUT_DATA_ROOT="/home/rhfogh/scratch/mxcube_base_dir/"
+#OUTPUT_DATA_ROOT="/scratch_fs1/rhfogh/mxcube_base_dir/"
 DOCKER_DATA_ROOT="/tmp/mxcube_base_dir/"
 
 # End of settable parameters.
