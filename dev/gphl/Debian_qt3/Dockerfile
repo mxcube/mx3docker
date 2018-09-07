@@ -2,6 +2,7 @@
 FROM debian/eol:squeeze
 MAINTAINER mguijarr <guijarro@esrf.fr>
 RUN apt-get update && apt-get dist-upgrade -y
+# RUN apt-get install openssl -y
 RUN apt-get install --force-yes python-qt3 -y
 RUN apt-get install --force-yes python-dev -y
 RUN apt-get install --force-yes git -y
@@ -13,14 +14,27 @@ RUN apt-get install --force-yes qt3-dev-tools -y
 RUN apt-get install --force-yes libgsl0-dev -y
 RUN apt-get install --force-yes python-matplotlib -y
 RUN apt-get install --force-yes wget -y
+RUN dpkg -l '*openssl*'
+RUN dpkg -l '*pip*'
+RUN dpkg -l '*wget*'
 RUN apt-get install --force-yes make -y
 RUN apt-get install --force-yes vim -y
 RUN apt-get install --force-yes g++ -y
+# RUN which pip
+# RUN ls -l /usr/bin/pip
+# RUN apt-get update && apt-get dist-upgrade -y
 
 # Add user and group so files on main machine get to belong to user instead of root
 RUN groupadd -g 3001 gphl
 RUN useradd -g gphl -m -s /bin/tcsh -u 1158 rhfogh
-RUN pip install --index-url=https://pypi.org/simple/ --upgrade pip
+# RUN ls -l /usr/share/pyshared/pip/
+RUN apt-get purge -y python-pip
+RUN wget --secure-protocol=sslv3 --no-check-certificate https://bootstrap.pypa.io/get-pip.py
+RUN python ./get-pip.py
+# RUN apt-get install python-pip
+# RUN python -m pip install --upgrade pip
+# RUN pip install --upgrade pip
+# RUN pip install --index-url=https://pypi.org/simple/ --upgrade pip
 RUN pip install  jsonpickle
 RUN pip install  gevent==1.1
 RUN pip install  louie
