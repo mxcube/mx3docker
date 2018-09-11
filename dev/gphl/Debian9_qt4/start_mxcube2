@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+CONTAINER=mx3_deb9_qt4_gphl
+
+# The following variables should be checked and (re)set as needed
+
+# MXCuBE additional lookup directories
+# Examples of alternative path settings:
+# HARDWARE_REPOSITORY_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml:/MXCuBE/mxcube/repo_test_1"
+# CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
+# CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
+HARDWARE_REPOSITORY_SERVER=""
+CUSTOM_HARDWARE_OBJECTS_PATH=""
+CUSTOM_BRICKS_PATH=""
+
+# Mac address for docker - nededed for GPhL license
+MAC_ADDRESS="54:ee:75:b6:8e:d3"
+
+# User for docker - for giving correct file ownership.
+# DOCKER_USER_ID="1000:100"
+DOCKER_USER_ID="1158:3001"
+# User name - used only for file names etc.
+USER_NAME="test_user"
+
+
+# GPHL-specific directories for mounting
+# GPhL software root mount
+GPHL_SOFTWARE_ROOT="/public/xtal"
+JAVA_INSTALLATION_DIR="/home/rhfogh/Software/jre1.8.0_144/"
+WORKFLOW_INSTALLATION_DIR="/home/rhfogh/scratch/sources/eclipse/wf14/"
+
+# Location for all output data - including mxcube settings
+OUTPUT_DATA_ROOT="/home/rhfogh/scratch/mxcube_base_dir/"
+#OUTPUT_DATA_ROOT="/scratch_fs1/rhfogh/mxcube_base_dir/"
+DOCKER_DATA_ROOT="/tmp/mxcube_base_dir/"
+
+# End of settable parameters.
+
+
+xhost +local:
+# Command needed to run GPhL workflows
+# - See gphl_config files for meaning and naming of different directories
+exec docker run -it \
+--mac-address $MAC_ADDRESS \
+-h=$CONTAINER \
+-u $DOCKER_USER_ID \
+-e HOME=$DOCKER_DATA_ROOT \
+-e USER=$USER_NAME \
+-e DISPLAY=$DISPLAY \
+-e QT_X11_NO_MITSHM=1 \
+-e HARDWARE_REPOSITORY_SERVER=$HARDWARE_REPOSITORY_SERVER \
+-e CUSTOM_HARDWARE_OBJECTS_PATH=$CUSTOM_HARDWARE_OBJECTS_PATH \
+-e CUSTOM_BRICKS_PATH=$CUSTOM_BRICKS_PATH \
+-v $MXCUBE2_ROOT:/MXCuBE/mxcube \
+-v $GPHL_SOFTWARE_ROOT:/MXCuBE/softwares \
+-v $JAVA_INSTALLATION_DIR:/MXCuBE/gphl_java \
+-v $WORKFLOW_INSTALLATION_DIR:/MXCuBE/gphl_java_classes \
+-v $OUTPUT_DATA_ROOT:$DOCKER_DATA_ROOT \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+$CONTAINER
