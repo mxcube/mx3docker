@@ -27,7 +27,7 @@ USER_NAME="test_user"
 # GPhL software root mount
 GPHL_SOFTWARE_ROOT="/public/xtal"
 JAVA_INSTALLATION_DIR="/home/rhfogh/Software/jre1.8.0_144/"
-WORKFLOW_INSTALLATION_DIR="/home/rhfogh/scratch/sources/eclipse/wf15/"
+WORKFLOW_INSTALLATION_DIR="/home/rhfogh/scratch/sources/eclipse/wf16/"
 
 # Location for all output data - including mxcube settings
 OUTPUT_DATA_ROOT="/home/rhfogh/scratch/mxcube_base_dir/"
