@@ -7,10 +7,11 @@ CONTAINER=mx3_deb9_qt4_gphl2
 # MXCuBE additional lookup directories
 #
 # Examples of alternative path settings:
+HO_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml"
 # HARDWARE_REPOSITORY_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml:/MXCuBE/mxcube/repo_test_1"
 # CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER=""
+HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/gphl_mock:/${HO_SERVER}:/${HO_SERVER}/embl_hh_p14"
 CUSTOM_HARDWARE_OBJECTS_PATH=""
 CUSTOM_BRICKS_PATH=""
 
@@ -36,7 +37,7 @@ OUTPUT_HOME="/home/rhfogh/dockerhome/"
 
 # GPHL-specific directories for mounting
 # Note: These are the same from insisde and outside the docker
-# and so must be eitehr identical or useed on only one side.
+# and so must be either identical or used on only one side.
 GPHL_RELEASE_ROOT="/public/xtal/"
 GPHL_SETUP_ROOT="/archive/rhfogh/mxcube/"
 
@@ -49,7 +50,6 @@ DATA_ROOT="/scratch_fs1/"
 
 xhost +local:
 # Command needed to run GPhL workflows
-# - See gphl_config files for meaning and naming of different directories
 exec docker run -it \
 --mac-address $MAC_ADDRESS \
 -p 25333:25333 \
