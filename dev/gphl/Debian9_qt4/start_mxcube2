@@ -11,7 +11,7 @@ HO_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml"
 # HARDWARE_REPOSITORY_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml:/MXCuBE/mxcube/repo_test_1"
 # CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/gphl_mock:/${HO_SERVER}:/${HO_SERVER}/embl_hh_p14"
+HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/gphl_mock:/${HO_SERVER}:/${HO_SERVER}/esrf_id30b"
 CUSTOM_HARDWARE_OBJECTS_PATH=""
 CUSTOM_BRICKS_PATH=""
 
