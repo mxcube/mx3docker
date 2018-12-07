@@ -54,7 +54,9 @@ google-chrome --no-sandbox
 
 Point the browser to localhost:8090 to start using MXCuBE3
 
-
+The test credentials are:
+username: idtest0
+password: 000
 
 
 

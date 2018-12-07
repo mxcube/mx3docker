@@ -32,6 +32,9 @@ docker ps
 ## Connecting to the application
 Open a browser and point it to localhost:8090
 
+The test credentials are:
+username: idtest0
+password: 000
 
 
 

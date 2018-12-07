@@ -2,7 +2,8 @@
 # Dockerfile to run MXCuBE web server
 ##############################################################################
 
-FROM debian:9
+#FROM ubuntu:trusty
+FROM debian:stretch
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
 ENV TERM linux
@@ -15,6 +16,7 @@ RUN apt-get update && apt-get -y upgrade && \
 WORKDIR /opt
 
 # Install MXCuBE3
+
 COPY debian-install.sh /opt/debian-install.sh
 RUN cd /opt && chmod +x debian-install.sh && ./debian-install.sh
 
