@@ -2,7 +2,6 @@
 # Dockerfile to run MXCuBE web server
 ##############################################################################
 
-#FROM ubuntu:trusty
 FROM debian:stretch
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
