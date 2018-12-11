@@ -2,7 +2,7 @@
 # Dockerfile to run MXCuBE web server
 ##############################################################################
 
-FROM debian:9
+FROM debian:stretch
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
 ENV TERM linux

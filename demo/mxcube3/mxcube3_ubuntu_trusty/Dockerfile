@@ -2,7 +2,7 @@
 # Dockerfile to run MXCuBE web server
 ##############################################################################
 
-FROM debian:stretch
+FROM ubuntu:trusty
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
 ENV TERM linux
@@ -16,8 +16,8 @@ WORKDIR /opt
 
 # Install MXCuBE3
 
-COPY debian-install.sh /opt/debian-install.sh
-RUN cd /opt && chmod +x debian-install.sh && ./debian-install.sh
+COPY install.sh /opt/install.sh
+RUN cd /opt && chmod +x install.sh && ./install.sh
 
 COPY mxcube /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
