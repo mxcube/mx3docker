@@ -8,10 +8,9 @@ CONTAINER=mx3_deb9_qt4_gphl2
 #
 # Examples of alternative path settings:
 HO_SERVER="/MXCuBE/mxcube/HardwareRepository/"
-# HARDWARE_REPOSITORY_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml:/MXCuBE/mxcube/repo_test_1"
 # CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/test/xml-qt:${HO_SERVER}/configuration/alba_xaloc13"
+HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/configuration/xml-qt:${HO_SERVER}/configuration/alba_xaloc13"
 CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/ALBA"
 CUSTOM_BRICKS_PATH=""
 
