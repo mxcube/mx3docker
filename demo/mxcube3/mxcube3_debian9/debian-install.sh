@@ -60,6 +60,7 @@ install_debian_deps() {
 
 install_python_deps() {
   command pip2 install numpy
+  command pip2 install pytest
   command pip2 install -r requirements.txt
 }
 

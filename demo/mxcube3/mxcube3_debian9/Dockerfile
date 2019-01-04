@@ -21,6 +21,7 @@ RUN cd /opt && chmod +x debian-install.sh && ./debian-install.sh
 
 COPY mxcube /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY mxcube-test.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 EXPOSE 8090 8081
