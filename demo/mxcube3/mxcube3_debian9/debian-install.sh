@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-
 { # this ensures the entire script is downloaded #
+DOWNLOAD_MXCUBE=${1:-1}
+echo "DOWNLOAD_MXCUBE:" $DOWNLOAD_MXCUBE
 
 system_has() {
   type "$1" > /dev/null 2>&1
@@ -20,6 +21,7 @@ mxcube_download() {
     exit 1
   fi
 
+  command rm -rf "$(mxcube_install_dir)"
   command git clone "$(mxcube_source)" "$(mxcube_install_dir)" || {
     echo >&2 'Failed to clone mxcube-3 repo. Please report this !'
     exit 2
@@ -55,7 +57,7 @@ install_debian_deps() {
   # npm package imagemin
   command apt-get -y install nodejs nodejs-legacy build-essential nasm libpng12-dev libpng-dev libpng++-dev libpng-tools libpng16-16 zlibc pkg-config
   command apt-get -y install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential librsvg2-dev
-  
+
 }
 
 install_python_deps() {
@@ -80,7 +82,10 @@ install_pngquant() {
   command cd /opt/mxcube3
 }
 
-mxcube_download
+if [ $DOWNLOAD_MXCUBE == 1 ] ; then
+    mxcube_download
+fi
+
 install_debian_deps
 install_python_deps
 install_pngquant
