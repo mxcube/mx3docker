@@ -49,6 +49,8 @@ DATA_ROOT="/scratch_fs1/"
 
 xhost +local:
 # Command needed to run GPhL workflows
+# Add in this for debug
+# -p 8050:8050 \
 exec docker run -it \
 --mac-address $MAC_ADDRESS \
 -p 25333:25333 \
