@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=mx3_deb9_qt4_gphl2
+CONTAINER=mx3_deb9_qt4_gphl3
 
 # The following variables should be checked and (re)set as needed
 
@@ -10,8 +10,8 @@ CONTAINER=mx3_deb9_qt4_gphl2
 HO_SERVER="/MXCuBE/mxcube/HardwareRepository/"
 # CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/configuration/xml-qt:${HO_SERVER}/configuration/alba_xaloc13"
-CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/ALBA"
+HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/configuration/xml-qt:${HO_SERVER}/configuration/embl_hh_p14"
+CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/mockup"
 CUSTOM_BRICKS_PATH=""
 
 # User and mac address
