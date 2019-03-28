@@ -5,10 +5,10 @@ RUN apt-get update
 RUN apt-get install python-pip -y
 RUN pip install --upgrade pip
 
-# To get rid of error, that the ps command cannot eb found
+# To get rid of error, that the ps command cannot be found
 RUN apt-get install procps -y
 
-# Not used in dockers, btu avoids consgtant error message
+# Not used by gphl in dockers, but avoids constant error message
 RUN pip install redis
 
 # Python-Java bridge - needed for GPhL workflow:
