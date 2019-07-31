@@ -8,6 +8,9 @@ RUN pip install --upgrade pip
 # To get rid of error, that the ps command cannot be found
 RUN apt-get install procps -y
 
+# Needed for new configuration from July 2019
+RUN pip install ruamel.yaml
+
 # Not used by gphl in dockers, but avoids constant error message
 RUN pip install redis
 
