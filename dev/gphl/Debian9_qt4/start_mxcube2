@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=mx3_deb9_qt4_gphl4
+CONTAINER=mx3_deb9_qt4_gphl
 
 # The following variables should be checked and (re)set as needed
 
