@@ -8,13 +8,10 @@ CONTAINER=mx3_deb9_qt4_gphl
 #
 # Examples of alternative path settings:
 HO_SERVER="/MXCuBE/mxcube/HardwareRepository/"
-# For ALBA 201905:
-# HO_SERVER="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml/"
-# HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/gphl_mock:/${HO_SERVER}:${HO_SERVER}/alba_xaloc13"
-# CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
+#CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
 HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/configuration/xml-qt:${HO_SERVER}/configuration/alba_xaloc13"
-# CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/mockup"
+CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/mockup"
 
 CUSTOM_BRICKS_PATH=""
 
@@ -24,8 +21,8 @@ CUSTOM_BRICKS_PATH=""
 MAC_ADDRESS="54:ee:75:b6:8e:d3"
 #
 # User for docker - for giving correct file ownership.
-# DOCKER_USER_ID="1000:100"
-DOCKER_USER_ID="1158:3001"
+DOCKER_USER_ID="1000:100"
+# DOCKER_USER_ID="1158:3001"
 # User name - used only for file names etc.
 USER_NAME="test_user"
 
@@ -41,11 +38,11 @@ OUTPUT_HOME="/home/rhfogh/dockerhome/"
 # GPHL-specific directories for mounting
 # Note: These are the same from insisde and outside the docker
 # and so must be either identical or used on only one side.
-GPHL_RELEASE_ROOT="/public/xtal/"
-GPHL_SETUP_ROOT="/archive/rhfogh/mxcube/"
+GPHL_RELEASE_ROOT="/mnt/scratch/rhfogh/gphl_release/"
+GPHL_SETUP_ROOT="/mnt/scratch/rhfogh/mxcube_setup/"
 
 # Location for output data - must be the same inside and outside docker
-DATA_ROOT="/scratch_fs1/"
+DATA_ROOT="/mnt/scratch/rhfogh/mxcube_data"
 
 
 # End of settable parameters.
