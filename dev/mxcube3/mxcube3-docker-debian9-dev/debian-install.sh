@@ -49,9 +49,6 @@ install_debian_deps() {
   #ffmpeg
   command apt-get -y install ffmpeg
 
-  #pillow
-  command apt-get -y install libxml2-dev libxslt-dev libtiff-dev libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python3-tk
-
   # npm package imagemin
   command apt-get -y install nodejs nodejs-legacy build-essential nasm libpng12-dev libpng-dev libpng++-dev libpng-tools libpng16-16 zlibc pkg-config
   command apt-get -y install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential librsvg2-dev
