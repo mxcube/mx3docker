@@ -72,14 +72,9 @@ install_node() {
   command npm install
 }
 
-install_pngquant() {
-  command cd /opt/mxcube3
-}
-
 mxcube_download
 install_debian_deps
 install_python_deps
-install_pngquant
 install_node
 
 } # this ensures the entire script is downloaded #
