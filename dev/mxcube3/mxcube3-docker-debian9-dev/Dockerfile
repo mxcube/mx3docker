@@ -2,7 +2,7 @@
 # Dockerfile to run MXCuBE web server
 ##############################################################################
 
-FROM debian:9
+FROM debian:10
 MAINTAINER Marcus Oscarsson <marcus.oscarsson@esrf.fr>
 
 ENV TERM linux
@@ -11,8 +11,8 @@ ENV USER root
 # Install system pacakges
 
 RUN apt-get update && apt-get -y upgrade && \
-    DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y mate-desktop-environment-core && \       
-    apt-get install -y apt-utils curl git sudo build-essential wget python \
+    DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y mate-desktop-environment-core && \
+    apt-get install -y apt-utils curl git sudo build-essential wget \
     tightvncserver emacs xemacs21 vim procps
 
 RUN mkdir /root/.vnc && echo "mxcube" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
