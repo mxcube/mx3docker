@@ -18,7 +18,11 @@ WORKDIR /opt
 
 COPY debian-install.sh /opt/debian-install.sh
 
-COPY README.md mxcube3/* /opt/mxcube3/
+# Small trick to "optinally" copy an already cloned MXCuBE3 repository
+# usefull for forinstance Travis builds. COPY fails if none of the given
+# files exsist so always copy README.md, the rest are copied if they
+# exist.
+COPY README.md mxcube/mxcube3/* mxcube3/* /opt/mxcube3/
 
 RUN cd /opt && chmod +x debian-install.sh && ./debian-install.sh $DOWNLOAD_MXCUBE
 
