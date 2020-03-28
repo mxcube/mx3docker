@@ -8,6 +8,10 @@ RUN pip install --upgrade pip
 # To get rid of error, that the ps command cannot be found
 RUN apt-get install procps -y
 
+# Additional requirements - temporarily put here
+RUN apt-get install python2-jsonschema -y
+RUN apt-get install python2-pyqtgraph -y
+
 # Needed for new configuration from July 2019
 RUN pip install ruamel.yaml
 
