@@ -1,4 +1,4 @@
-FROM mx3_deb9_qt4
+FROM mx3_deb9b_qt4
 
 RUN apt-get update
 
@@ -9,8 +9,8 @@ RUN pip install --upgrade pip
 RUN apt-get install procps -y
 
 # Additional requirements - temporarily put here
-RUN apt-get install python2-jsonschema -y
-RUN apt-get install python2-pyqtgraph -y
+RUN apt-get install python-jsonschema -y
+RUN apt-get install python-pyqtgraph -y
 
 # Needed for new configuration from July 2019
 RUN pip install ruamel.yaml
