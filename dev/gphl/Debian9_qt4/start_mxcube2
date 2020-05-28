@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=mx3_deb9_qt4_gphl
+CONTAINER=mx3_deb9_qt4_gphl5
 
 # The following variables should be checked and (re)set as needed
 
@@ -8,9 +8,12 @@ CONTAINER=mx3_deb9_qt4_gphl
 #
 # Examples of alternative path settings:
 HO_SERVER="/MXCuBE/mxcube/HardwareRepository/"
+# HO_CONFIGURATION=${HO_SERVER}/configuration
+HO_CONFIGURATION="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml"
 #CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
 # CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER="${HO_SERVER}/configuration/gphl_mock:/${HO_SERVER}/configuration/xml-qt:${HO_SERVER}/configuration/alba_xaloc13"
+HARDWARE_REPOSITORY_SERVER="${HO_CONFIGURATION}/gphl_mock:${HO_CONFIGURATION}:${HO_CONFIGURATION}/alba_xaloc13"
+# HARDWARE_REPOSITORY_SERVER="${HO_CONFIGURATION}/gphl_mock:${HO_CONFIGURATION}/xml-qt:${HO_CONFIGURATION}/alba_xaloc13"
 CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/mockup"
 
 CUSTOM_BRICKS_PATH=""
@@ -23,6 +26,7 @@ MAC_ADDRESS="54:ee:75:b6:8e:d3"
 # User for docker - for giving correct file ownership.
 DOCKER_USER_ID="1000:100"
 # DOCKER_USER_ID="1158:3001"
+# CONSIDER SOMETHING LKE --user $(id -u):$(id -g)
 # User name - used only for file names etc.
 USER_NAME="test_user"
 
