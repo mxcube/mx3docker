@@ -42,8 +42,8 @@ OUTPUT_HOME="/home/rhfogh/dockerhome/"
 # GPHL-specific directories for mounting
 # Note: These are the same from insisde and outside the docker
 # and so must be either identical or used on only one side.
-GPHL_RELEASE_ROOT="/mnt/scratch/rhfogh/gphl_release/"
-GPHL_SETUP_ROOT="/mnt/scratch/rhfogh/mxcube_setup/"
+GPHL_RELEASE_ROOT="/mnt/scratch/rhfogh/GPhL/"
+GPHL_SETUP_ROOT="/mnt/scratch/rhfogh/GPhL/mxcube_setup/"
 
 # Location for output data - must be the same inside and outside docker
 DATA_ROOT="/mnt/scratch/rhfogh/mxcube_data"
