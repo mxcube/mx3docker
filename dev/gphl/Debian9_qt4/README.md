@@ -14,7 +14,7 @@ Set environment variable, e.g. (in ~/.bashrc for bash):
 
     export MXCUBE2_ROOT=/path/to/dir/containing/mxcube/repository
 
-Edit the start_mxcube2 file to set MXCuBE HO and HardwareRepository paths,
+Edit the start_mxcube2 file to set MXCuBE HO and mx3core paths,
 User ID to use (for file permissions), output data directory,
 and directories and license info for Global Phasing software.
 

@@ -24,7 +24,7 @@ WORKDIR /MXCuBE/mxcube
 #RUN git submodule update
 #WORKDIR /MXCuBE/mxcube/HardwareObjects
 #RUN git checkout master
-#WORKDIR /MXCuBE/mxcube/HardwareRepository
+#WORKDIR /MXCuBE/mxcube/mx3core
 #RUN git checkout master
 #WORKDIR /MXCuBE/mxcube/Blissframework
 #RUN git checkout master
