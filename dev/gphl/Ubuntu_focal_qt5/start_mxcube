@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CONTAINER=mx3_deb9_qt4_gphl5
+CONTAINER=mxcube_ubuntu_focal_qt5
 
 # The following variables should be checked and (re)set as needed
 
