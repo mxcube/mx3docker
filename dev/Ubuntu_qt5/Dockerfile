@@ -1,50 +1,41 @@
 FROM ubuntu:focal
 
+# Set terminal and time zone, to catch installer interactoin attempts
 ENV TERM linux
 ENV TZ Europe/London
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-# Install system packages - from Marcus O mxcub3
 
+# Install system packages - from Marcus O mxcub3
 RUN apt-get update && apt-get -y upgrade && \
     apt-get install -y apt-utils curl git sudo wget python
 RUN apt-get install -y build-essential
 
-RUN mkdir -p /MXCuBE/mxcube
-WORKDIR /MXCuBE/mxcube
+# Install 'top-level' packages
+RUN apt-get install -y python3-scipy
+RUN apt-get install -y python3-pyqtgraph
 
-# Qt5 install - from install_pyqt5.sh
-# RUN add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
-# RUN apt-get update -qq
+# NB numpy, matplotlib, Pillow, PyQt5, and sip
+# are installed at this point
 
-# Install Qt5, QtMultimedia and QtSvg
-RUN apt-get install -qq qtdeclarative5-dev
-ENV  QMAKE /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+# Get and update pip
+RUN apt-get install python3-pip -y
+RUN pip install --upgrade pip
 
-# Library versions
-# PYTHON_VERSION=3
-# PYQT_VERSION=5.7.1
-# SIP_VERSION=4.19
+# From requirement list
+RUN pip install gevent
+RUN pip install suds-py3
+RUN pip install jsonpickle
+RUN pip install ruamel.yaml
+RUN pip install PyDispatcher
+RUN pip install pylint
+RUN pip install lxml
+RUN pip install jsonschema
 
-# Install sip
-RUN wget --retry-connrefused https://sourceforge.net/projects/pyqt/files/sip/sip-4.19/sip-4.19.tar.gz
-RUN tar -xzf sip-4.19.tar.gz
-RUN pwd
-RUN ls -l
-WORKDIR /MXCuBE/mxcube/sip-4.19
-RUN pwd
-RUN ls -l
-RUN  cat configure.py
-RUN python3 configure.py
-RUN make
-RUN sudo make install
-WORKDIR /MXCuBE/mxcube
-
-# Install PyQt5
-RUN wget --retry-connrefused https://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-5.7.1/PyQt5_gpl-5.7.1.tar.gz
-RUN tar -xzf PyQt5_gpl-5.7.1.tar.gz
-WORKDIR /MXCuBE/mxcube/PyQt5_gpl-5.7.1
-RUN python3 configure.py --confirm-license --qmake=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
-RUN make
-RUN make install
-WORKDIR /MXCuBE/mxcube
-
+# Global Phasing requirements
+# Python-Java bridge - needed for GPhL workflow:
+# Install as root, otehrwise not found in xml parsing
+RUN pip install py4j
+# Needed for GPhL simcal and stratcal
+RUN pip install f90nml
+# Needed for GPhL stratcal rotation matrices
+RUN pip install mgen

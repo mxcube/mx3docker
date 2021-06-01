@@ -3,20 +3,17 @@
 CONTAINER=mxcube_ubuntu_focal_qt5
 
 # The following variables should be checked and (re)set as needed
-
-# MXCuBE additional lookup directories
 #
-# Examples of alternative path settings:
-HO_SERVER="/MXCuBE/mxcube/HardwareRepository/"
-HO_CONFIGURATION=${HO_SERVER}/configuration
-# HO_CONFIGURATION="/MXCuBE/mxcube/ExampleFiles/HardwareObjects.xml"
-# CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/extra_HO_test_1:/MXCuBE/mxcube/extra_HO_test_2"
-# CUSTOM_BRICKS_PATH="/MXCuBE/mxcube/extra_brick_test_1:/MXCuBE/mxcube/extra_brick_test_2"
-HARDWARE_REPOSITORY_SERVER="${HO_CONFIGURATION}/gphl_mock:${HO_CONFIGURATION}/xml-qt:${HO_CONFIGURATION}/embl_hh_p14"
-# HARDWARE_REPOSITORY_SERVER="${HO_CONFIGURATION}/gphl_mock:${HO_CONFIGURATION}:${HO_CONFIGURATION}/alba_xaloc13"
-CUSTOM_HARDWARE_OBJECTS_PATH="/MXCuBE/mxcube/HardwareRepository/HardwareObjects/mockup"
-
+MXCUBE_BASE=/MXCuBE
+MXCUBE_CORE=${MXCUBE_BASE}/mxcubecore/mxcubecore
 CUSTOM_BRICKS_PATH=""
+CUSTOM_HARDWARE_OBJECTS_PATH="${MXCUBE_CORE}/HardwareObjects/mockup"
+
+MOCKUP_XML_PATH=${MXCUBE_CORE}/configuration/mockup
+MXCUBE_CORE_CONFIG_PATH="${MOCKUP_XML_PATH}/gphl:${MOCKUP_XML_PATH}/qt:${MOCKUP_XML_PATH}"
+
+# SOLEIL:
+MXCUBE_CORE_CONFIG_PATH=${MXCUBE_CORE_CONFIG_PATH}:${MXCUBE_CORE}/configuration/soleil/px2/mockups
 
 # User and mac address
 #
@@ -48,7 +45,6 @@ GPHL_SETUP_ROOT="/mnt/scratch/rhfogh/GPhL/mxcube_setup/"
 # Location for output data - must be the same inside and outside docker
 DATA_ROOT="/mnt/scratch/rhfogh/mxcube_data"
 
-
 # End of settable parameters.
 
 
@@ -66,10 +62,11 @@ exec docker run -it \
 -e USER=$USER_NAME \
 -e DISPLAY=$DISPLAY \
 -e QT_X11_NO_MITSHM=1 \
--e HARDWARE_REPOSITORY_SERVER=$HARDWARE_REPOSITORY_SERVER \
+-e MXCUBE_CORE_CONFIG_PATH=$MXCUBE_CORE_CONFIG_PATH \
 -e CUSTOM_HARDWARE_OBJECTS_PATH=$CUSTOM_HARDWARE_OBJECTS_PATH \
 -e CUSTOM_BRICKS_PATH=$CUSTOM_BRICKS_PATH \
--v $MXCUBE2_ROOT:/MXCuBE/mxcube \
+-e PYTHONPATH=$MXCUBE_BASE/mxcube:$MXCUBE_BASE/mxcubecore \
+-v $MXCUBE_ROOT:/MXCuBE \
 -v $GPHL_RELEASE_ROOT:$GPHL_RELEASE_ROOT \
 -v $GPHL_SETUP_ROOT:$GPHL_SETUP_ROOT \
 -v $DATA_ROOT:$DATA_ROOT \
