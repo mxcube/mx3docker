@@ -22,6 +22,8 @@ RUN apt-get install python3-pip -y
 RUN pip install --upgrade pip
 
 # From requirement list
+#RUN pip install greenlet==0.4.16
+#RUN pip install gevent==1.3.7
 RUN pip install gevent
 RUN pip install suds-py3
 RUN pip install jsonpickle
@@ -33,7 +35,8 @@ RUN pip install jsonschema
 
 # Global Phasing requirements
 # Python-Java bridge - needed for GPhL workflow:
-# Install as root, otehrwise not found in xml parsing
+# Install as root, otherwise not found in xml parsing
+#RUN pip install py4j==0.10.6
 RUN pip install py4j
 # Needed for GPhL simcal and stratcal
 RUN pip install f90nml

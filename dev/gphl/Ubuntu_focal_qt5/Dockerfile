@@ -1,4 +1,4 @@
-FROM ubuntu_focal_qt5b
+FROM ubuntu_focal_qt5
 
 RUN apt-get update
 
