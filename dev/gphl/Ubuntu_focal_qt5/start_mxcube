@@ -4,16 +4,16 @@ CONTAINER=mxcube_ubuntu_focal_qt5
 
 # The following variables should be checked and (re)set as needed
 #
-MXCUBE_BASE=/MXCuBE
-MXCUBE_CORE=${MXCUBE_BASE}/mxcubecore/mxcubecore
+MXCUBE_BASE="/MXCuBE"
+MXCUBE_CORE="${MXCUBE_BASE}/mxcubecore/mxcubecore"
 CUSTOM_BRICKS_PATH=""
 CUSTOM_HARDWARE_OBJECTS_PATH="${MXCUBE_CORE}/HardwareObjects/mockup"
 
-MOCKUP_XML_PATH=${MXCUBE_CORE}/configuration/mockup
+MOCKUP_XML_PATH="${MXCUBE_CORE}/configuration/mockup"
 MXCUBE_CORE_CONFIG_PATH="${MOCKUP_XML_PATH}/gphl:${MOCKUP_XML_PATH}/qt:${MOCKUP_XML_PATH}"
 
 # SOLEIL:
-MXCUBE_CORE_CONFIG_PATH=${MXCUBE_CORE_CONFIG_PATH}:${MXCUBE_CORE}/configuration/soleil/px2/mockups
+MXCUBE_CORE_CONFIG_PATH="${MXCUBE_CORE_CONFIG_PATH}:${MXCUBE_CORE}/configuration/soleil/px2/mockups"
 
 # User and mac address
 #

@@ -19,7 +19,7 @@ WORKDIR /MXCuBE
 # RUN mkdir -p /archive
 # RUN mkdir -p /scratch_fs1
 # RUN mkdir -p /public/xtal
-RUN mkdir -p /mnt/scrstch
+RUN mkdir -p /mnt/scratch
 
 # Used instead of Entrypoint to allow alternative commands to be run
 CMD ["python3",  "/MXCuBE/mxcube/mxcubeqt/__main__.py", "--pyqt5", "--mockupMode"]
